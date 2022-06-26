@@ -1,0 +1,9 @@
+{
+  "$schema": "https://github.com/sumneko/vscode-lua/raw/master/setting/schema.json",
+  "diagnostics": {
+    "neededFileStatus": {
+      "type-check": "Any",
+      "codestyle-check": "Any"
+    }
+  }
+}
