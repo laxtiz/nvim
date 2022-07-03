@@ -49,7 +49,7 @@ vim.api.nvim_create_autocmd("User", {
 -- HACK: auto reload plugins module
 ---@param module_name string
 local reload = function(module_name)
-  local re = vim.regex("\\v" .. module_name .. "([./][a-zA-Z0-9_-]+)*$")
+  local re = vim.regex("\\v^" .. module_name .. "([./][a-zA-Z0-9_-]+)*$")
   for name, _ in pairs(package.loaded) do
     if re:match_str(name) then
       package.loaded[name] = nil

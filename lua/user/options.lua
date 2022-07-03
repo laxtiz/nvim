@@ -22,7 +22,7 @@ vim.o.smartcase = true
 vim.o.undofile = true
 
 vim.o.termguicolors = true
--- vim.o.winblend = 30
+vim.o.winblend = 25
 
 vim.o.number = true
 vim.o.relativenumber = true

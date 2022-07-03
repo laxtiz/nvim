@@ -1,5 +1,5 @@
 ---@type PluginSpec
-local Spec = { "laxtiz/catppuccin.nvim", branch = "autocmd", as = "catppuccin" }
+local Spec = { "catppuccin/nvim", as = "catppuccin" }
 
 ---@param name string
 ---@param info PluginInfo

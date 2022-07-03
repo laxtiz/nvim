@@ -36,7 +36,7 @@ Spec.config = function(name, info)
     window = {
       border = "none",
       position = "bottom",
-      winblend = 30,
+      winblend = 25,
     },
     layout = {
       align = "center",

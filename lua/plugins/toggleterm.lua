@@ -18,6 +18,7 @@ Spec.config = function(name, info)
     direction = "float",
     float_opts = {
       border = "curved",
+      winblend = 25,
     },
   }
 end

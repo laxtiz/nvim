@@ -20,7 +20,7 @@ Spec.config = function(name, info)
     defaults = {
       ---@type string | "horizontal" | "vertical" | "center" | "cursor" | "flex" | "bottom_pane"
       layout_strategy = "flex",
-      winblend = 30,
+      winblend = 25,
       mappings = {},
     },
     extensions = {
