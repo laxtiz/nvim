@@ -1,9 +1,6 @@
 ---@type PluginSpec
 local Spec = { "nvim-treesitter/nvim-treesitter" }
 
--- latest commit for vim parser with ABI 13
-Spec.commit = "518e275"
-
 Spec.requires = {
   { "nvim-treesitter/nvim-treesitter-context", after = "nvim-treesitter" },
   { "nvim-treesitter/nvim-treesitter-refactor", after = "nvim-treesitter" },
