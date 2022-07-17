@@ -12,7 +12,7 @@ vim.diagnostic.config {
     header = { "  Diagnostic", "Float" },
     source = "if_many",
   },
-  update_in_insert = false,
+  update_in_insert = true,
 }
 
 local signs = { Error = " ", Warn = " ", Info = " ", Hint = " " }

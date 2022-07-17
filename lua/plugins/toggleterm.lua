@@ -17,7 +17,7 @@ Spec.config = function(name, info)
     ---@type string | "vertical" | "horizontal" | "tab" | "float"
     direction = "float",
     float_opts = {
-      border = "curved",
+      border = "rounded",
       winblend = 25,
     },
   }

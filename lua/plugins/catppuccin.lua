@@ -1,6 +1,9 @@
 ---@type PluginSpec
 local Spec = { "catppuccin/nvim", as = "catppuccin" }
 
+-- FIX: plugin author make some breaking change, need fix
+Spec.commit = "357dc37"
+
 ---@param name string
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
@@ -64,7 +67,7 @@ Spec.config = function(name, info)
       nvimtree = {
         enabled = true,
         show_root = true,
-        transparent_panel = true,
+        transparent_panel = false,
       },
       symbols_outline = true,
       bufferline = true,

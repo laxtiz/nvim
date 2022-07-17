@@ -15,18 +15,18 @@ Spec.config = function(name, info)
     options = {
       icons_enabled = true,
       theme = "auto",
-      section_separators = { left = "", right = "" },
-      component_separators = { left = "", right = "" },
+      -- section_separators = { left = "", right = "" },
+      -- component_separators = { left = "", right = "" },
       disabled_filetypes = {},
       always_divide_middle = true,
       globalstatus = true,
     },
     sections = {
       lualine_a = {
-        { "mode", icon = "", separator = { left = "", right = "" } },
+        { "mode", icon = "" }
       },
       lualine_b = {
-        { "branch", icon = " " },
+        { "branch", icon = "" },
         { "diff", symbols = { added = " ", modified = " ", removed = " " } },
       },
       lualine_c = {
@@ -34,11 +34,11 @@ Spec.config = function(name, info)
       },
       lualine_y = {
         { "diagnostics" },
-        { "lsp", icon = " " },
+        { "lsp", icon = "" },
       },
       lualine_z = {
         "location",
-        { "progress", separator = { right = "" } },
+        "progress"
       },
     },
     extensions = {

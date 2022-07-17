@@ -19,10 +19,9 @@ Spec.config = function(name, info)
     },
     sources = {
       -- null.builtins.formatting.stylua,
+      -- null.builtins.formatting.prettier,
       null.builtins.formatting.shfmt,
-      null.builtins.formatting.prettier,
       null.builtins.formatting.black,
-      -- null.builtins.diagnostics.mypy,
     },
   }
 end

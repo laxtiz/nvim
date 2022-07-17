@@ -50,7 +50,7 @@ Spec.config = function(name, info)
   lsp_installer.setup {
     automatic_installation = false,
     ensure_installed = { "sumneko_lua" },
-    ui = { border = "single" },
+    ui = { border = "rounded" },
     github = {
       download_url_template = "https://ghproxy.com/github.com/%s/releases/download/%s/%s",
     },
@@ -76,18 +76,6 @@ Spec.config = function(name, info)
         },
         telemetry = {
           enable = false,
-        },
-      },
-    },
-  }
-
-  -- for python
-  lspconfig.pyright.setup {
-    settings = {
-      python = {
-        analysis = {
-          typecheckmode = "basic",
-          diagnosticmode = "workspace",
         },
       },
     },

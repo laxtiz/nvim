@@ -8,7 +8,6 @@ vim.o.updatetime = 500
 
 vim.o.cursorline = true
 vim.o.cursorcolumn = false
-vim.o.scrolloff = 2
 
 vim.o.expandtab = true
 vim.o.tabstop = 4
@@ -31,10 +30,16 @@ vim.o.signcolumn = "yes"
 vim.o.showmode = false
 vim.o.ruler = false
 
+vim.o.winwidth = 80
+vim.o.winminwidth = 20
+vim.o.winheight = 10
+vim.o.winminheight = 5
+vim.o.scrolloff = 2
+
 -- Neovide
 -- https://github.com/neovide/neovide
 if vim.g.neovide then
-  vim.o.guifont = "Rec Mono Duotone:h12"
+  vim.o.guifont = "FantasqueSansMono Nerd Font:h14"
   vim.g.neovide_fullscreen = false
   vim.g.neovide_transparency = 0.8
   vim.g.neovide_cursor_antialiasing = true

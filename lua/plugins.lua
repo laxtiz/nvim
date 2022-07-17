@@ -66,10 +66,8 @@ local config = {
     default_url_format = "https://ghproxy.com/github.com/%s.git",
   },
   profile = {
-    enable = false,
+    enable = true,
   },
 }
 
 return require("packer").startup { spec, config = config }
-
--- vim: et ts=2 sw=2 ft=lua
