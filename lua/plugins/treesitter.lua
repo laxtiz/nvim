@@ -13,14 +13,8 @@ Spec.requires = {
 ---@param plugin PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, plugin)
-  -- HACK: proxy to local mirror
-  for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
-    config.install_info.url = config.install_info.url:gsub("^https://github.com/", "https://ghproxy.com/github.com/")
-  end
-
   require("nvim-treesitter.configs").setup {
-    ensure_installed = { "lua", "vim" },
-    ignore_install = { "glsl" },
+    -- ensure_installed = { "lua", "vim" },
     highlight = {
       enable = true,
     },
