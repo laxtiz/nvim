@@ -17,6 +17,7 @@ local spec = function(use, use_rocks)
 
   use(plugins["treesitter"])
   use(plugins["lspconfig"])
+  use(plugins["mason"])
   use(plugins["null-ls"])
   use(plugins["fidget"])
   use(plugins["cmp"])
@@ -28,7 +29,6 @@ local spec = function(use, use_rocks)
   use(plugins["gitsigns"])
   use(plugins["indent-blankline"])
   use(plugins["todo-comments"])
-  -- use(plugins["lightspeed"])
 
   -- UI Components, maybe lazy-loaded
   use(plugins["toggleterm"])

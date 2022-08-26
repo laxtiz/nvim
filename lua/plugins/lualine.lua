@@ -23,7 +23,7 @@ Spec.config = function(name, info)
     },
     sections = {
       lualine_a = {
-        { "mode", icon = "" }
+        { "mode", icon = "" },
       },
       lualine_b = {
         { "branch", icon = "" },
@@ -38,7 +38,7 @@ Spec.config = function(name, info)
       },
       lualine_z = {
         "location",
-        "progress"
+        "progress",
       },
     },
     extensions = {

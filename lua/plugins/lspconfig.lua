@@ -2,7 +2,6 @@
 local Spec = { "neovim/nvim-lspconfig" }
 
 Spec.requires = {
-  "williamboman/nvim-lsp-installer",
   "ray-x/lsp_signature.nvim",
 }
 
@@ -44,21 +43,6 @@ Spec.config = function(name, info)
     on_attach = on_attach,
     capabilities = capabilities,
   })
-
-  local lsp_installer = require("nvim-lsp-installer")
-
-  lsp_installer.setup {
-    automatic_installation = false,
-    ensure_installed = { "sumneko_lua" },
-    ui = { border = "rounded" },
-    github = {
-      download_url_template = "https://ghproxy.com/github.com/%s/releases/download/%s/%s",
-    },
-  }
-
-  for _, server in ipairs(lsp_installer.get_installed_servers()) do
-    lspconfig[server.name].setup {}
-  end
 
   -- for lua
   lspconfig.sumneko_lua.setup {
