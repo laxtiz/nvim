@@ -17,21 +17,6 @@ Spec.config = function(name, info)
       download_url_template = "https://ghproxy.com/github.com/%s/releases/download/%s/%s",
     },
   }
-
-  local mason_lspconfig = require("mason-lspconfig")
-  mason_lspconfig.setup {
-    automatic_installation = false,
-    ensure_installed = {
-      "sumneko_lua",
-    },
-  }
-
-  local ok, lspconfig = pcall(require, "nvim-lspconfig")
-  if ok then
-    for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
-      lspconfig[server.name].setup {}
-    end
-  end
 end
 
 return Spec

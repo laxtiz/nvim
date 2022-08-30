@@ -9,13 +9,17 @@ Spec.keys = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local toggleterm = require("toggleterm")
+  local shell = vim.o.shell
+  if vim.fn.executable("pwsh") == 1 then
+    shell = "pwsh"
+  end
 
-  toggleterm.setup {
+  require("toggleterm").setup {
     open_mapping = "<F12>",
     close_on_exit = true,
     ---@type string | "vertical" | "horizontal" | "tab" | "float"
     direction = "float",
+    shell = shell,
     float_opts = {
       border = "rounded",
       winblend = 25,

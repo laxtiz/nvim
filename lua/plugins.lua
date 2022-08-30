@@ -15,12 +15,12 @@ local spec = function(use, use_rocks)
   use { "wbthomason/packer.nvim", opt = true }
   use { "github/copilot.vim", opt = true }
 
-  use(plugins["treesitter"])
-  use(plugins["lspconfig"])
   use(plugins["mason"])
+  use(plugins["lspconfig"])
   use(plugins["null-ls"])
   use(plugins["fidget"])
   use(plugins["cmp"])
+  use(plugins["treesitter"])
   use(plugins["autopairs"])
   use(plugins["comment"])
 
@@ -66,7 +66,7 @@ local config = {
     default_url_format = "https://ghproxy.com/github.com/%s.git",
   },
   profile = {
-    enable = true,
+    enable = false,
   },
 }
 

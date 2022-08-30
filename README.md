@@ -34,5 +34,3 @@ By the way. you can manual sync plugins with vim command `:PackerSync`
 ## About performance
 
 review startup-time with command `:StarupTime`.
-
-review plugins-loaded with command `:PackerProfile`.

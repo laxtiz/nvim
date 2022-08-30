@@ -69,7 +69,3 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 vim.api.nvim_create_user_command("PackerSync", function()
   require("plugins").sync()
 end, { desc = "PackerSync wrapped" })
-
-vim.api.nvim_create_user_command("PackerProfile", function()
-  require("plugins").profile_output()
-end, { desc = "PackerProfile wrapped" })

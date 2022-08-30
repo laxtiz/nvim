@@ -2,6 +2,7 @@
 local Spec = { "neovim/nvim-lspconfig" }
 
 Spec.requires = {
+  "williamboman/mason-lspconfig.nvim",
   "ray-x/lsp_signature.nvim",
 }
 
@@ -43,6 +44,15 @@ Spec.config = function(name, info)
     on_attach = on_attach,
     capabilities = capabilities,
   })
+
+  local mason_lspconfig = require("mason-lspconfig")
+  mason_lspconfig.setup {
+    automatic_installation = false,
+  }
+
+  for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
+    lspconfig[server].setup {}
+  end
 
   -- for lua
   lspconfig.sumneko_lua.setup {
