@@ -1,10 +1,6 @@
 ---@type PluginSpec
 local Spec = { "williamboman/mason.nvim" }
 
-Spec.requires = {
-  "williamboman/mason-lspconfig.nvim",
-}
-
 ---@param name string
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local

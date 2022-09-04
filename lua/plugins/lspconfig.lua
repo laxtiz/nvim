@@ -54,6 +54,9 @@ Spec.config = function(name, info)
     lspconfig[server].setup {}
   end
 
+  -- for dart/flutter
+  lspconfig.dartls.setup {}
+
   -- for lua
   lspconfig.sumneko_lua.setup {
     settings = {
