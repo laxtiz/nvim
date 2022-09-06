@@ -9,6 +9,8 @@ Spec.requires = {
   { "p00f/nvim-ts-rainbow", after = "nvim-treesitter" },
 }
 
+Spec.run = ":TSUpdate"
+
 ---@param name string
 ---@param plugin PluginInfo
 ---@diagnostic disable-next-line: unused-local

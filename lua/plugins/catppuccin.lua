@@ -1,8 +1,7 @@
 ---@type PluginSpec
 local Spec = { "catppuccin/nvim", as = "catppuccin" }
 
--- FIX: plugin author make some breaking change, need fix
--- Spec.commit = "357dc37"
+Spec.run = ":CatppuccinCompile"
 
 ---@param name string
 ---@param info PluginInfo
@@ -13,7 +12,7 @@ Spec.config = function(name, info)
     transparent_background = false,
     term_colors = true,
     compile = {
-      enable = false,
+      enable = true,
     },
     styles = {
       comments = { "italic" },

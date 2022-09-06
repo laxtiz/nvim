@@ -1,5 +1,5 @@
 ---@type PluginSpec
-local Spec = { "laxtiz/todo-comments.nvim" }
+local Spec = { "folke/todo-comments.nvim" }
 
 -- PERF: fully optimised
 -- HACK: hmmm, this looks a bit funky

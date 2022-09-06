@@ -26,7 +26,7 @@ Spec.config = function(name, info)
         { "mode", icon = "" },
       },
       lualine_b = {
-        { "branch", icon = "" },
+        { "branch", icon = "" },
         { "diff", symbols = { added = " ", modified = " ", removed = " " } },
       },
       lualine_c = {

@@ -31,6 +31,7 @@ local spec = function(use, use_rocks)
   use(plugins["todo-comments"])
 
   -- UI Components, maybe lazy-loaded
+  use(plugins["dashboard"])
   use(plugins["toggleterm"])
   use(plugins["nvim-tree"])
   use(plugins["symbols-outline"])
@@ -66,7 +67,7 @@ local config = {
     default_url_format = "https://ghproxy.com/github.com/%s.git",
   },
   profile = {
-    enable = false,
+    enable = true,
   },
 }
 

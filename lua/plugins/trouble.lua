@@ -1,5 +1,5 @@
 ---@type PluginSpec
-local Spec = { "laxtiz/trouble.nvim" }
+local Spec = { "folke/trouble.nvim" }
 
 Spec.requires = {
   "kyazdani42/nvim-web-devicons",
