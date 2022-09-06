@@ -1,7 +1,9 @@
 ---@type PluginSpec
 local Spec = { "catppuccin/nvim", as = "catppuccin" }
 
-Spec.run = ":CatppuccinCompile"
+Spec.run = function()
+  require("catppuccin").compile()
+end
 
 ---@param name string
 ---@param info PluginInfo
@@ -90,7 +92,7 @@ Spec.config = function(name, info)
       vimwiki = true,
       beacon = true,
       navic = true,
-      overseer = false,
+      overseer = true,
     },
     color_overrides = {},
     highlight_overrides = {},

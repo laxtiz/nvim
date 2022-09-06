@@ -7,6 +7,10 @@ Spec.requires = {
   "SmiteshP/nvim-navic",
 }
 
+Spec.after = {
+  "mason.nvim",
+}
+
 ---@param name string
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local

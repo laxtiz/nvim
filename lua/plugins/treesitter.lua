@@ -82,7 +82,7 @@ Spec.config = function(name, plugin)
     },
     refactor = {
       highlight_definitions = {
-        enable = true,
+        enable = false,
         clear_on_cursor_move = true,
       },
       highlight_current_scope = {

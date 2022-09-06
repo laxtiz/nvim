@@ -23,6 +23,7 @@ local spec = function(use, use_rocks)
   use(plugins["treesitter"])
   use(plugins["autopairs"])
   use(plugins["comment"])
+  use(plugins["illuminate"])
 
   use(plugins["bufferline"])
   use(plugins["lualine"])
@@ -32,6 +33,7 @@ local spec = function(use, use_rocks)
 
   -- UI Components, maybe lazy-loaded
   use(plugins["dashboard"])
+  use(plugins["overseer"])
   use(plugins["toggleterm"])
   use(plugins["nvim-tree"])
   use(plugins["symbols-outline"])

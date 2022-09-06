@@ -4,6 +4,7 @@ local Spec = { "nvim-lualine/lualine.nvim" }
 Spec.requires = {
   "kyazdani42/nvim-web-devicons",
   "SmiteshP/nvim-navic",
+  "stevearc/overseer.nvim",
 }
 
 ---@param name string
@@ -42,6 +43,7 @@ Spec.config = function(name, info)
       lualine_y = {
         { "diagnostics" },
         { "lsp", icon = "" },
+        { "overseer" },
       },
       lualine_z = {
         "location",
