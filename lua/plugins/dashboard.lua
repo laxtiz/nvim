@@ -38,24 +38,25 @@ Spec.config = function(name, info)
     "⠈⠀⡼⠃⢐⡕⡇⠣⡡⡢⡮⠮⡲⡀⡁⢧⢳⢕⣝⢮⢺⢜⡘⢉⢎⢧⡫⣺⡪⣆⠱⠁⠀⠠⠀⢀⠈⡠⡪⠂",
     "⠀⠠⡋⠀⢐⣕⢝⢌⢸⢸⡸⡸⡂⡎⡮⡊⡪⡓⢕⢕⢙⢌⢖⡌⢕⢕⣝⢜⣎⢊⠄⠅⢀⠀⡀⠀⢐⡑⢀⢀",
   }
+
   db.custom_center = {
     {
       icon = "  ",
       desc = title("New File"),
-      action = db.new_file
-    },
-    {
-      icon = "  ",
-      desc = title("Recent Files"),
-      action = function()
-        require("telescope.command").load_command("oldfiles")
-      end,
+      action = db.new_file,
     },
     {
       icon = "  ",
       desc = title("Find Files"),
       action = function()
         require("telescope.command").load_command("find_files")
+      end,
+    },
+    {
+      icon = "  ",
+      desc = title("Recent Files"),
+      action = function()
+        require("telescope.command").load_command("oldfiles")
       end,
     },
     {
@@ -68,7 +69,7 @@ Spec.config = function(name, info)
     {
       icon = "  ",
       desc = title("Quit Nvim"),
-      action = "qall"
+      action = "qall",
     },
   }
 end

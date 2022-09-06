@@ -67,7 +67,7 @@ local config = {
     default_url_format = "https://ghproxy.com/github.com/%s.git",
   },
   profile = {
-    enable = true,
+    enable = false,
   },
 }
 

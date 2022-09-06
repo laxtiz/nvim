@@ -4,6 +4,7 @@ local Spec = { "neovim/nvim-lspconfig" }
 Spec.requires = {
   "williamboman/mason-lspconfig.nvim",
   "ray-x/lsp_signature.nvim",
+  "SmiteshP/nvim-navic",
 }
 
 ---@param name string
@@ -31,6 +32,7 @@ Spec.config = function(name, info)
     end
 
     require("lsp_signature").on_attach(client, bufnr)
+    require("nvim-navic").attach(client, bufnr)
   end
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
