@@ -19,8 +19,6 @@ Spec.config = function()
     filetypes_denylist = {
       "dashboard",
       "TelescopePrompt",
-      "OverseerList",
-      "OverseerForm",
       "NvimTree",
       "Outline",
       "Trouble",

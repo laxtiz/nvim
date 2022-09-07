@@ -28,11 +28,6 @@ Spec.config = function(name, info)
           text = "NvimTree",
           highlight = "NvimTreeSymlink",
         },
-        {
-          filetype = "OverseerList",
-          text = "Overseer",
-          highlight = "OverseerTask",
-        },
       },
     },
   }

@@ -92,7 +92,7 @@ Spec.config = function(name, info)
       vimwiki = true,
       beacon = true,
       navic = true,
-      overseer = true,
+      overseer = false,
     },
     color_overrides = {},
     highlight_overrides = {},
