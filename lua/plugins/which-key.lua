@@ -9,7 +9,7 @@ Spec.requires = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local wk = require("which-key")
+  local wk = require "which-key"
 
   wk.setup {
     plugins = {

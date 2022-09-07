@@ -11,12 +11,12 @@ Spec.requires = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local navic = require("nvim-navic")
+  local navic = require "nvim-navic"
   navic.setup {
     highlight = true,
   }
 
-  local lualine = require("lualine")
+  local lualine = require "lualine"
 
   lualine.setup {
     options = {

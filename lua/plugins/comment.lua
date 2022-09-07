@@ -5,7 +5,7 @@ local Spec = { "numToStr/Comment.nvim" }
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local comment = require("Comment")
+  local comment = require "Comment"
 
   comment.setup {
     padding = true,

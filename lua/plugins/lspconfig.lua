@@ -45,13 +45,13 @@ Spec.config = function(name, info)
     capabilities = ext.update_capabilities(capabilities)
   end
 
-  local lspconfig = require("lspconfig")
+  local lspconfig = require "lspconfig"
   lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
     on_attach = on_attach,
     capabilities = capabilities,
   })
 
-  local mason_lspconfig = require("mason-lspconfig")
+  local mason_lspconfig = require "mason-lspconfig"
   mason_lspconfig.setup {
     automatic_installation = false,
   }

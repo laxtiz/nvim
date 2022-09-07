@@ -10,7 +10,7 @@ Spec.keys = {
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   local shell = vim.o.shell
-  if vim.fn.executable("pwsh") == 1 then
+  if vim.fn.executable "pwsh" == 1 then
     shell = "pwsh"
   end
 

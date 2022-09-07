@@ -1,4 +1,4 @@
-vim.cmd([[packadd packer.nvim]])
+vim.cmd [[packadd packer.nvim]]
 
 ---@type table<string, PluginSpec>
 local plugins = setmetatable({}, {
@@ -48,12 +48,13 @@ local spec = function(use, use_rocks)
 
   -- not need setup.
   use { "dstein64/vim-startuptime", cmd = "StartupTime" }
-  use("lewis6991/impatient.nvim")
+  use "lewis6991/impatient.nvim"
+  use "gpanders/editorconfig.nvim"
 
   -- vallina plugins
-  use("honza/vim-snippets")
-  use("tpope/vim-surround")
-  use("tpope/vim-repeat")
+  use "honza/vim-snippets"
+  use "tpope/vim-surround"
+  use "tpope/vim-repeat"
 end
 
 ---@type PackerConfig

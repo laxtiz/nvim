@@ -5,7 +5,7 @@ local Spec = { "lewis6991/gitsigns.nvim" }
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local gitsigns = require("gitsigns")
+  local gitsigns = require "gitsigns"
 
   gitsigns.setup {
     signcolumn = true,

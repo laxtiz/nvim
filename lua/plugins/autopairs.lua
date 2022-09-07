@@ -5,7 +5,7 @@ local Spec = { "windwp/nvim-autopairs" }
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local autopairs = require("nvim-autopairs")
+  local autopairs = require "nvim-autopairs"
 
   autopairs.setup {
     break_undo = false,

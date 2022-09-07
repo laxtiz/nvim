@@ -9,7 +9,9 @@ Spec.requires = {
   { "p00f/nvim-ts-rainbow", after = "nvim-treesitter" },
 }
 
-Spec.run = ":TSUpdate"
+Spec.run = function()
+  require("nvim-treesitter.install").update()
+end
 
 ---@param name string
 ---@param plugin PluginInfo

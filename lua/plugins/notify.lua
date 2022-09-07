@@ -9,7 +9,7 @@ Spec.requires = {
 ---@param plugin PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, plugin)
-  local notify = require("notify")
+  local notify = require "notify"
   local levels = vim.log.levels
 
   notify.setup {

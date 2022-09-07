@@ -13,7 +13,7 @@ local Spec = { "folke/todo-comments.nvim" }
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local todo = require("todo-comments")
+  local todo = require "todo-comments"
 
   todo.setup {
     signs = true,

@@ -1,7 +1,8 @@
 @ECHO off
 
-set HERE=%~0dp
+set HERE=%~dp0
+
 
 del /s /q %HERE%\plugin\packer_compiled.lua
-del /s /q %LOCALAPPDATA%\nvim-data
-del /s /q %TEMP%\nvim
+rmdir /s /q %LOCALAPPDATA%\nvim-data
+rmdir /s /q %TEMP%\nvim

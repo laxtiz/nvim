@@ -7,19 +7,19 @@ local sync = function(job_id, exit_code, event)
   if exit_code ~= 0 then
     vim.notify("failed on install packer.nvim", levels.ERROR)
   else
-    vim.notify("packer.nvim installed, synchronizing...")
+    vim.notify "packer.nvim installed, synchronizing..."
     require("plugins").sync()
   end
 end
 
 local bootstrap = function()
-  local packpath = vim.fn.stdpath("data") .. "/site"
+  local packpath = vim.fn.stdpath "data" .. "/site"
   local install_path = packpath .. "/pack/packer/opt/packer.nvim"
   if vim.fn.empty(vim.fn.glob(install_path)) == 0 then
     return
   end
 
-  vim.notify("Bootstrap Install packer.nvim")
+  vim.notify "Bootstrap Install packer.nvim"
   local cmd = {
     "git",
     "clone",
@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("User", {
   group = group,
   pattern = "PackerCompileDone",
   callback = function()
-    vim.notify("plugins compile successed.")
+    vim.notify "plugins compile successed."
   end,
 })
 
@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = group,
   pattern = { "plugins.lua", "*/plugins/*.lua" },
   callback = function()
-    reload("plugins")
+    reload "plugins"
     require("plugins").compile()
   end,
 })

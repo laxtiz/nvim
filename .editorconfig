@@ -1,0 +1,16 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+
+[*.lua]
+indent_size = 2
+quote_style = double
+call_arg_parentheses = unambiguous_remove_string_only 
+
+[*.vim]
+indent_size = 2
+
+[*.json]
+indent_size = 2
