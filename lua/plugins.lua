@@ -48,7 +48,6 @@ local spec = function(use, use_rocks)
 
   -- not need setup.
   use { "dstein64/vim-startuptime", cmd = "StartupTime" }
-  use("gpanders/editorconfig.nvim")
   use("lewis6991/impatient.nvim")
 
   -- vallina plugins
