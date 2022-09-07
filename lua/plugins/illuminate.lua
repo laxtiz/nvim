@@ -12,6 +12,19 @@ Spec.config = function()
       "treesitter",
       "regex",
     },
+    delay = 100,
+    modes_allowlist = {
+      "n",
+    },
+    filetypes_denylist = {
+      "dashboard",
+      "TelescopePrompt",
+      "OverseerList",
+      "OverseerForm",
+      "NvimTree",
+      "Outline",
+      "Trouble",
+    },
     under_cursor = true,
   }
 end

@@ -18,14 +18,20 @@ Spec.config = function(name, info)
       themable = true,
       numbers = "both",
       diagnostics = "nvim_lsp",
+      ---@diagnostic disable-next-line: unused-local
       diagnostics_indicator = function(count, level, diagnostic_dict, context)
         return signs[level] .. count
       end,
       offsets = {
         {
           filetype = "NvimTree",
-          text = "File Explorer",
+          text = "NvimTree",
           highlight = "NvimTreeSymlink",
+        },
+        {
+          filetype = "OverseerList",
+          text = "Overseer",
+          highlight = "OverseerTask",
         },
       },
     },
