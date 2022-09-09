@@ -30,6 +30,7 @@ local spec = function(use, use_rocks)
   use(plugins["gitsigns"])
   use(plugins["indent-blankline"])
   use(plugins["todo-comments"])
+  use(plugins["neotest"])
 
   -- UI Components, maybe lazy-loaded
   -- use(plugins["dashboard"])

@@ -47,6 +47,7 @@ Spec.config = function(name, info)
 
   wk.register {
     ["?"] = { "<cmd>lua require'which-key'.show_command()<cr>", "Which Key?" },
+    ["<F5>"] = { "<cmd>lua require'neotest'.run.run()<cr>", "Neotest Run~" }
   }
 
   wk.register({
@@ -81,6 +82,7 @@ Spec.config = function(name, info)
     r = { "<cmd>lua require'trouble'.open'lsp_references'<cr>", "List references" },
     O = { "<cmd>lua require'symbols-outline'.open_outline()<cr>", "Outline" },
     f = { "<cmd>lua require'nvim-tree'.toggle()<cr>", "NvimTree" },
+    s = { "<cmd>lua require'neotest'.summary.toggle()<cr>", "Neotest Summary" }
   }, { prefix = "g" })
 
   wk.register({

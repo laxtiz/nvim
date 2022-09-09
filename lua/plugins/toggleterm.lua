@@ -1,10 +1,6 @@
 ---@type PluginSpec
 local Spec = { "akinsho/toggleterm.nvim" }
 
-Spec.keys = {
-  "<F12>",
-}
-
 ---@param name string
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
