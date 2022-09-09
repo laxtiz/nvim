@@ -17,11 +17,16 @@ Spec.config = function()
       "n",
     },
     filetypes_denylist = {
+      "packer",
       "dashboard",
-      "TelescopePrompt",
       "NvimTree",
       "Outline",
       "Trouble",
+      "TelescopePrompt",
+      "TelescopeResults",
+      "OverseerList",
+      "OverseerForm",
+      "neotest-summary",
     },
     under_cursor = true,
   }

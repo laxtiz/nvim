@@ -32,7 +32,7 @@ local spec = function(use, use_rocks)
   use(plugins["todo-comments"])
 
   -- UI Components, maybe lazy-loaded
-  use(plugins["dashboard"])
+  -- use(plugins["dashboard"])
   use(plugins["toggleterm"])
   use(plugins["nvim-tree"])
   use(plugins["symbols-outline"])

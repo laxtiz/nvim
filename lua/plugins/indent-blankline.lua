@@ -11,7 +11,16 @@ Spec.config = function(name, info)
     show_current_context = true,
     show_current_context_start = false,
     filetype_exclude = {
+      "packer",
       "dashboard",
+      "NvimTree",
+      "Outline",
+      "Trouble",
+      "TelescopePrompt",
+      "TelescopeResults",
+      "OverseerList",
+      "OverseerForm",
+      "neotest-summary",
     },
     context_highlight_list = {
       "IndentBlanklineIndent1",
