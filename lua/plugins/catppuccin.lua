@@ -9,8 +9,15 @@ end
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local catppuccin = require "catppuccin"
-  catppuccin.setup {
+  vim.api.nvim_create_autocmd("User", {
+    group = vim.api.nvim_create_augroup("catppuccin", { clear = true }),
+    pattern = "PackerCompileDone",
+    callback = function()
+      require("catppuccin").compile()
+    end,
+  })
+
+  require("catppuccin").setup {
     transparent_background = false,
     term_colors = true,
     compile = {
