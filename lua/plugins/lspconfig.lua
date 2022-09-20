@@ -2,13 +2,12 @@
 local Spec = { "neovim/nvim-lspconfig" }
 
 Spec.requires = {
-  "williamboman/mason-lspconfig.nvim",
   "ray-x/lsp_signature.nvim",
   "SmiteshP/nvim-navic",
-}
-
-Spec.after = {
-  "mason.nvim",
+  "folke/lua-dev.nvim",
+  "simrat39/rust-tools.nvim",
+  "p00f/clangd_extensions.nvim",
+  "akinsho/flutter-tools.nvim",
 }
 
 ---@param name string
@@ -35,15 +34,24 @@ Spec.config = function(name, info)
       vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
     end
 
-    require("lsp_signature").on_attach(client, bufnr)
-    require("nvim-navic").attach(client, bufnr)
+    if client.resolved_capabilities.document_symbol then
+      require("nvim-navic").attach(client, bufnr)
+    end
+
+    if client.resolved_capabilities.signature_help then
+      require("lsp_signature").on_attach(client, bufnr)
+    end
   end
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
-  local ok, ext = pcall(require, "cmp_nvim_lsp")
-  if ok then
-    capabilities = ext.update_capabilities(capabilities)
-  end
+  pcall(function()
+    require("cmp_nvim_lsp").update_capabilities(capabilities)
+  end)
+
+  local default_config = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
 
   local lspconfig = require "lspconfig"
   lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
@@ -51,37 +59,34 @@ Spec.config = function(name, info)
     capabilities = capabilities,
   })
 
-  local mason_lspconfig = require "mason-lspconfig"
-  mason_lspconfig.setup {
-    automatic_installation = false,
+  -- for lua
+  require("lua-dev").setup {
+    library = {
+      enabled = true,
+      runtime = true,
+      types = true,
+      plugins = true,
+    },
+    setup_jsonls = true,
   }
 
-  for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
-    lspconfig[server].setup {}
-  end
+  -- for rust
+  require("rust-tools").setup {
+    server = default_config,
+  }
+
+  -- for clangd
+  require("clangd_extensions").setup {
+    server = default_config,
+  }
 
   -- for dart/flutter
-  lspconfig.dartls.setup {}
-
-  -- for lua
-  lspconfig.sumneko_lua.setup {
-    settings = {
-      Lua = {
-        runtime = {
-          version = "luajit",
-          path = vim.split(package.path, ";"),
-        },
-        workspace = {
-          library = vim.api.nvim_get_runtime_file("", true),
-        },
-        diagnostics = {
-          globals = { "vim" },
-        },
-        telemetry = {
-          enable = false,
-        },
+  require("flutter-tools").setup {
+    lsp = vim.tbl_extend("force", default_config, {
+      color = {
+        enabled = true,
       },
-    },
+    }),
   }
 end
 

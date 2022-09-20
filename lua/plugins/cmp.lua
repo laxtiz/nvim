@@ -44,7 +44,7 @@ Spec.config = function(name, info)
       documentation = cmp.config.window.bordered { border = "double" },
     },
     mapping = cmp.mapping.preset.insert {
-      ["<C-Space>"] = cmp.mapping.complete(),
+      ["<C-Space>"] = cmp.mapping.complete {},
       ["<C-U>"] = cmp.mapping.scroll_docs(-4),
       ["<C-D>"] = cmp.mapping.scroll_docs(4),
       ["<C-E>"] = cmp.mapping.abort(),
@@ -91,10 +91,10 @@ Spec.config = function(name, info)
     }),
   })
 
-  local ok, ext = pcall(require, "nvim-autopairs.completion.cmp")
-  if ok then
-    cmp.event:on("confirm_done", ext.on_confirm_done { map_char = { tex = "" } })
-  end
+  pcall(function()
+    local autopairs = require "nvim-autopairs.completion.cmp"
+    cmp.event:on("confirm_done", autopairs.on_confirm_done { map_char = { tex = "" } })
+  end)
 
   vim.opt.completeopt = { "menu", "menuone", "noselect" }
 end

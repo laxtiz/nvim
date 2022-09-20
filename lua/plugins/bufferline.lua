@@ -9,10 +9,9 @@ Spec.requires = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local bufferline = require "bufferline"
   local signs = { error = " ", warning = " ", info = " ", hint = " " }
 
-  bufferline.setup {
+  require("bufferline").setup {
     options = {
       mode = "buffers",
       themable = true,

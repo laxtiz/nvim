@@ -20,6 +20,11 @@ Spec.config = function(name, info)
     defaults = {
       ---@type string | "horizontal" | "vertical" | "center" | "cursor" | "flex" | "bottom_pane"
       layout_strategy = "flex",
+      layout_config = {
+        flex = {
+          flip_columns = 132,
+        },
+      },
       winblend = 25,
       mappings = {},
     },
@@ -33,19 +38,8 @@ Spec.config = function(name, info)
     },
   }
 
-  -- HACK: ignore error.
-  local load_extension = function(ext_name)
-    local ok, ext = pcall(telescope.load_extension, ext_name)
-    if ok then
-      return ext
-    end
-    vim.notify(ext, vim.log.levels.WARN)
-  end
-
-  load_extension "notify"
-  load_extension "todo-comments"
-
-  vim.keymap.set("c", "<C-R>", "<Plug>(TelescopeFuzzyCommandSearch)")
+  pcall(telescope.load_extension, "notify")
+  pcall(telescope.load_extension, "todo-comments")
 end
 
 return Spec

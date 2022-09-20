@@ -13,9 +13,7 @@ Spec.module = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local trouble = require "trouble"
-
-  trouble.setup {
+  require("trouble").setup {
     auto_jump = {
       "lsp_definitions",
       "lsp_type_definitions",

@@ -14,7 +14,7 @@ Spec.config = function(name, info)
     open_mapping = "<F12>",
     close_on_exit = true,
     ---@type string | "vertical" | "horizontal" | "tab" | "float"
-    direction = "float",
+    direction = "horizontal",
     shell = shell,
     float_opts = {
       border = "rounded",

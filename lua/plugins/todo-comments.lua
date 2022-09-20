@@ -13,9 +13,7 @@ local Spec = { "folke/todo-comments.nvim" }
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local todo = require "todo-comments"
-
-  todo.setup {
+  require("todo-comments").setup {
     signs = true,
     colors = {
       feat = { "Special", "#F5C2E7" },

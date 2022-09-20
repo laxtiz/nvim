@@ -5,9 +5,7 @@ local Spec = { "stevearc/dressing.nvim" }
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local dressing = require "dressing"
-
-  dressing.setup {
+  require("dressing").setup {
     input = {
       enabled = true,
       input_only = true,

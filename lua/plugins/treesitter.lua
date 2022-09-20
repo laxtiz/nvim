@@ -14,9 +14,9 @@ Spec.run = function()
 end
 
 ---@param name string
----@param plugin PluginInfo
+---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
-Spec.config = function(name, plugin)
+Spec.config = function(name, info)
   require("nvim-treesitter.configs").setup {
     -- ensure_installed = { "lua", "vim" },
     highlight = {

@@ -5,9 +5,7 @@ local Spec = { "numToStr/Comment.nvim" }
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local comment = require "Comment"
-
-  comment.setup {
+  require("Comment").setup {
     padding = true,
     sticky = true,
     ignore = "^$",
@@ -15,8 +13,6 @@ Spec.config = function(name, info)
     opleader = { line = "gc", block = "gb" },
     extra = { above = "gcO", below = "gco", eol = "gcA" },
     mappings = { basic = true, extra = true, extended = false },
-    pre_hook = nil,
-    post_hook = nil,
   }
 end
 
