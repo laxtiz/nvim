@@ -2,12 +2,17 @@
 local Spec = { "neovim/nvim-lspconfig" }
 
 Spec.requires = {
+  "williamboman/mason-lspconfig.nvim",
   "ray-x/lsp_signature.nvim",
   "SmiteshP/nvim-navic",
   "folke/lua-dev.nvim",
   "simrat39/rust-tools.nvim",
   "p00f/clangd_extensions.nvim",
   "akinsho/flutter-tools.nvim",
+}
+
+Spec.after = {
+  "mason.nvim",
 }
 
 ---@param name string
@@ -88,6 +93,17 @@ Spec.config = function(name, info)
       },
     }),
   }
+
+  local mason_lspconfig = require "mason-lspconfig"
+  mason_lspconfig.setup {
+    automatic_installation = false,
+  }
+
+  for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
+    if lspconfig[server_name].manager == nil then
+      lspconfig[server_name].setup {}
+    end
+  end
 end
 
 return Spec

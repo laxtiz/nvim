@@ -53,6 +53,7 @@ local spec = function(use, use_rocks)
   use "honza/vim-snippets"
   use "tpope/vim-surround"
   use "tpope/vim-repeat"
+  use "purofle/vim-mindustry-logic"
 end
 
 ---@type PackerConfig
