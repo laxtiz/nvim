@@ -8,7 +8,6 @@ Spec.requires = {
   "folke/lua-dev.nvim",
   "simrat39/rust-tools.nvim",
   "p00f/clangd_extensions.nvim",
-  "akinsho/flutter-tools.nvim",
 }
 
 Spec.after = {
@@ -64,6 +63,12 @@ Spec.config = function(name, info)
     capabilities = capabilities,
   })
 
+  local mason_lspconfig = require "mason-lspconfig"
+  mason_lspconfig.setup {
+    ensure_installed = { "sumneko_lua" },
+    automatic_installation = true,
+  }
+
   -- for lua
   require("lua-dev").setup {
     library = {
@@ -85,20 +90,7 @@ Spec.config = function(name, info)
     server = default_config,
   }
 
-  -- for dart/flutter
-  require("flutter-tools").setup {
-    lsp = vim.tbl_extend("force", default_config, {
-      color = {
-        enabled = true,
-      },
-    }),
-  }
-
-  local mason_lspconfig = require "mason-lspconfig"
-  mason_lspconfig.setup {
-    automatic_installation = false,
-  }
-
+  -- other server installed with mason.
   for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
     if lspconfig[server_name].manager == nil then
       lspconfig[server_name].setup {}
