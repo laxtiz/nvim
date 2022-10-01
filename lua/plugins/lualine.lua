@@ -10,19 +10,12 @@ Spec.requires = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local navic = require "nvim-navic"
-  navic.setup {
-    highlight = true,
-  }
-
-  local lualine = require "lualine"
-
-  lualine.setup {
+  local config = {
     options = {
       icons_enabled = true,
       theme = "auto",
-      -- section_separators = { left = "", right = "" },
-      -- component_separators = { left = "", right = "" },
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
       disabled_filetypes = {},
       always_divide_middle = true,
       globalstatus = true,
@@ -33,19 +26,26 @@ Spec.config = function(name, info)
       },
       lualine_b = {
         { "branch", icon = "" },
-        { "diff", symbols = { added = " ", modified = " ", removed = " " } },
+        {
+          "diff",
+          colored = true,
+          symbols = {
+            added = " ",
+            modified = " ",
+            removed = " ",
+          },
+        },
+        {
+          "diagnostics",
+          colored = true,
+          symbols = {
+            icons = { error = " ", warn = " ", info = " ", hint = " " },
+            no_icons = { error = "E:", warn = "W:", info = "I:", hint = "H:" },
+          },
+        },
       },
       lualine_c = {
-        { "filename", path = 1, symbols = { modified = "  ", readonly = "  " } },
-        { navic.get_location, cond = navic.is_available },
-      },
-      lualine_y = {
-        { "diagnostics" },
-        { "lsp" },
-      },
-      lualine_z = {
-        "location",
-        "progress",
+        { "filename", path = 1, file_status = false },
       },
     },
     extensions = {
@@ -56,6 +56,20 @@ Spec.config = function(name, info)
       "quickfix",
     },
   }
+
+  if vim.fn.exists "+winbar" then
+    config.winbar = {
+      lualine_a = { "lsp_client" },
+      lualine_c = {
+        { "navic", highlight = true, separator = " > " },
+      },
+    }
+    config.inactive_winbar = {
+      lualine_c = { "lsp_client" },
+    }
+  end
+
+  require("lualine").setup(config)
 end
 
 return Spec

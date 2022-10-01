@@ -10,7 +10,8 @@ Spec.requires = {
 }
 
 Spec.run = function()
-  require("nvim-treesitter.install").update()
+  local update = require("nvim-treesitter.install").update { with_sync = false }
+  update "all"
 end
 
 ---@param name string
