@@ -57,16 +57,18 @@ Spec.config = function(name, info)
     },
   }
 
-  if vim.fn.exists "+winbar" then
+  if vim.fn.exists "+winbar" == 1 then
     config.winbar = {
       lualine_a = { "lsp_client" },
       lualine_c = {
-        { "navic", highlight = true, separator = " > " },
+        { "navic", highlight = true },
       },
     }
     config.inactive_winbar = {
       lualine_c = { "lsp_client" },
     }
+  else
+    table.insert(config.sections.lualine_c, { "navic", highlight = true })
   end
 
   require("lualine").setup(config)

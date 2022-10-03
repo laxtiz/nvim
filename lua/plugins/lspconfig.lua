@@ -25,7 +25,7 @@ Spec.config = function(name, info)
     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
     vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
 
-    if vim.fn.has "nvim-0.8" then
+    if vim.fn.has "nvim-0.8" == 1 then
       vim.api.nvim_buf_set_keymap(bufnr, "x", "=", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
       vim.api.nvim_buf_set_keymap(bufnr, "n", "==", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
       vim.api.nvim_buf_set_keymap(bufnr, "x", "z=", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
