@@ -5,7 +5,7 @@ Spec.requires = {
   "williamboman/mason-lspconfig.nvim",
   "ray-x/lsp_signature.nvim",
   "SmiteshP/nvim-navic",
-  "folke/lua-dev.nvim",
+  "folke/neodev.nvim",
   "simrat39/rust-tools.nvim",
   "p00f/clangd_extensions.nvim",
 }
@@ -54,21 +54,15 @@ Spec.config = function(name, info)
     end
   end
 
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  pcall(function()
-    require("cmp_nvim_lsp").update_capabilities(capabilities)
-  end)
+  local capabilities = {}
+  if pcall(require, "cmp_nvim_lsp") then
+    capabilities = require("cmp_nvim_lsp").default_capabilities()
+  end
 
   local default_config = {
     on_attach = on_attach,
     capabilities = capabilities,
   }
-
-  local lspconfig = require "lspconfig"
-  lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  })
 
   local mason_lspconfig = require "mason-lspconfig"
   mason_lspconfig.setup {
@@ -77,7 +71,7 @@ Spec.config = function(name, info)
   }
 
   -- for lua
-  require("lua-dev").setup {
+  require("neodev").setup {
     library = {
       enabled = true,
       runtime = true,
@@ -98,9 +92,10 @@ Spec.config = function(name, info)
   }
 
   -- other server installed with mason.
+  local lspconfig = require "lspconfig"
   for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
     if lspconfig[server_name].manager == nil then
-      lspconfig[server_name].setup {}
+      lspconfig[server_name].setup(default_config)
     end
   end
 end
