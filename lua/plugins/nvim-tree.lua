@@ -1,8 +1,8 @@
 ---@type PluginSpec
-local Spec = { "kyazdani42/nvim-tree.lua" }
+local Spec = { "nvim-tree/nvim-tree.lua" }
 
 Spec.requires = {
-  "kyazdani42/nvim-web-devicons",
+  "nvim-tree/nvim-web-devicons",
 }
 
 Spec.module_pattern = {

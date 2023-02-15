@@ -26,6 +26,7 @@ local spec = function(use, use_rocks)
   use(plugins["illuminate"])
 
   use(plugins["bufferline"])
+  use(plugins["barbecue"])
   use(plugins["lualine"])
   use(plugins["gitsigns"])
   use(plugins["indent-blankline"])

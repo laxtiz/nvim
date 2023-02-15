@@ -2,7 +2,7 @@
 local Spec = { "akinsho/bufferline.nvim" }
 
 Spec.requires = {
-  "kyazdani42/nvim-web-devicons",
+  "nvim-tree/nvim-web-devicons",
 }
 
 ---@param name string

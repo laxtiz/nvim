@@ -1,25 +1,16 @@
 ---@type PluginSpec
-local Spec = { "folke/trouble.nvim" }
+local Spec = { "utilyre/barbecue.nvim" }
 
 Spec.requires = {
+  "SmiteshP/nvim-navic",
   "nvim-tree/nvim-web-devicons",
-}
-
-Spec.module = {
-  "trouble",
 }
 
 ---@param name string
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  require("trouble").setup {
-    auto_jump = {
-      "lsp_definitions",
-      "lsp_type_definitions",
-    },
-    use_diagnostic_signs = true,
-  }
+  require("barbecue").setup {}
 end
 
 return Spec
