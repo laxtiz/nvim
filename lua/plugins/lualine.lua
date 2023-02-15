@@ -45,6 +45,7 @@ Spec.config = function(name, info)
       },
       lualine_c = {
         { "filename", path = 1, file_status = false },
+        { "overseer", colored = true },
       },
     },
     extensions = {

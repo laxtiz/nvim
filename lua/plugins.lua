@@ -31,6 +31,7 @@ local spec = function(use, use_rocks)
   use(plugins["gitsigns"])
   use(plugins["indent-blankline"])
   use(plugins["todo-comments"])
+  use(plugins["overseer"])
 
   -- UI Components, maybe lazy-loaded
   use(plugins["toggleterm"])
