@@ -66,7 +66,7 @@ Spec.config = function(name, info)
 
   local mason_lspconfig = require "mason-lspconfig"
   mason_lspconfig.setup {
-    ensure_installed = { "sumneko_lua" },
+    ensure_installed = { "lua_ls" },
     automatic_installation = true,
   }
 

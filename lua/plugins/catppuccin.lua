@@ -1,27 +1,24 @@
 ---@type PluginSpec
 local Spec = { "catppuccin/nvim", as = "catppuccin" }
 
-Spec.run = function()
-  require("catppuccin").compile()
-end
-
 ---@param name string
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  vim.api.nvim_create_autocmd("User", {
-    group = vim.api.nvim_create_augroup("catppuccin", { clear = true }),
-    pattern = "PackerCompileDone",
-    callback = function()
-      require("catppuccin").compile()
-    end,
-  })
-
   require("catppuccin").setup {
+    ---@type string | "latte" | "frappe" | "macchiato" | "mocha"
+    flavour = "macchiato",
+    background = {
+      light = "latte",
+      dark = "mocha",
+    },
     transparent_background = false,
+    show_end_of_buffer = false,
     term_colors = true,
-    compile = {
-      enable = true,
+    dim_inactive = {
+      enabled = true,
+      shade = "dark",
+      percentage = 0.15,
     },
     styles = {
       comments = { "italic" },
@@ -53,6 +50,9 @@ Spec.config = function(name, info)
           warnings = { "undercurl" },
           information = { "undercurl" },
         },
+      },
+      barbecue = {
+        dim_dirname = true,
       },
       coc_nvim = false,
       lsp_trouble = true,
@@ -98,15 +98,24 @@ Spec.config = function(name, info)
       aerial = false,
       vimwiki = true,
       beacon = true,
-      navic = true,
-      overseer = false,
+      navic = {
+        enabled = true,
+        custom_bg = "NONE",
+      },
+      overseer = true,
     },
     color_overrides = {},
-    highlight_overrides = {},
+    highlight_overrides = {
+      all = function(colors)
+        return {
+          CursorLineNr = { fg = colors.pink },
+          Comment = { fg = colors.overlay0 },
+          LineNr = { fg = colors.overlay2 },
+        }
+      end,
+    },
   }
 
-  ---@type string | "latte" | "frappe" | "macchiato" | "mocha"
-  vim.g.catppuccin_flavour = "mocha"
   vim.cmd [[colorscheme catppuccin]]
 end
 

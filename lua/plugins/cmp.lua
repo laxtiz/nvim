@@ -69,7 +69,8 @@ Spec.config = function(name, info)
       end, { "i", "s" }),
     },
     sources = cmp.config.sources(
-      { { name = "nvim_lsp" }, { name = "snippy" }, { name = "nvim_lua" } },
+      { { name = "snippy" }, { name = "nvim_lsp" } },
+      { { name = "nvim_lua" } },
       { { name = "buffer" } }
     ),
   }
