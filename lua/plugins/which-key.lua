@@ -28,7 +28,7 @@ Spec.config = function(name, info)
         g = true,
       },
     },
-    operators = { gc = "Comment linewise", gb = "Comment blockwise" },
+    -- operators = { gc = "Comment linewise", gb = "Comment blockwise" },
     key_labels = {
       ["<space>"] = "SPC",
       ["<tab>"] = "TAB",
@@ -46,7 +46,7 @@ Spec.config = function(name, info)
   }
 
   wk.register {
-    ["?"] = { "<cmd>lua require'which-key'.show_command()<cr>", "Which Key?" },
+    ["?"] = { "<cmd>lua require('which-key').show_command()<cr>", "Which Key?" },
   }
 
   wk.register({
@@ -57,8 +57,9 @@ Spec.config = function(name, info)
   }, { mode = "o" })
 
   wk.register({
-    b = { "<cmd>lua require'bufferline'.cycle(-1)<cr>", "Previous buffer" },
+    b = { "<cmd>lua require('bufferline').cycle(-1)<cr>", "Previous buffer" },
     d = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Previous diagnostic" },
+    h = { "<cmd>lua require('gitsigns').prev_hunk()<cr>", "Previous hunk" },
     m = "Previous function start",
     M = "Previous function end",
     ["["] = "Previous class start",
@@ -66,8 +67,9 @@ Spec.config = function(name, info)
   }, { prefix = "[" })
 
   wk.register({
-    b = { "<cmd>lua require'bufferline'.cycle(1)<cr>", "Next buffer" },
+    b = { "<cmd>lua require('bufferline').cycle(1)<cr>", "Next buffer" },
     d = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next diagnostic" },
+    h = { "<cmd>lua require('gitsigns').next_hunk()<cr>", "Next hunk" },
     m = "Next function start",
     M = "Next function end",
     ["["] = "Next class start",
@@ -75,28 +77,30 @@ Spec.config = function(name, info)
   }, { prefix = "]" })
 
   wk.register({
-    D = { "<cmd>lua require'trouble'.open'lsp_type_definitions'<cr>", "Goto type definitions" },
-    d = { "<cmd>lua require'trouble'.open'lsp_definitions'<cr>", "Goto definitions" },
-    i = { "<cmd>lua require'trouble'.open'lsp_implementations'<cr>", "List implementations" },
-    r = { "<cmd>lua require'trouble'.open'lsp_references'<cr>", "List references" },
-    O = { "<cmd>lua require'symbols-outline'.open_outline()<cr>", "Outline" },
-    f = { "<cmd>lua require'nvim-tree'.toggle()<cr>", "NvimTree" },
+    D = { "<cmd>lua require('trouble').open('lsp_type_definitions')<cr>", "Goto type definitions" },
+    d = { "<cmd>lua require('trouble').open('lsp_definitions')<cr>", "Goto definitions" },
+    i = { "<cmd>lua require('trouble').open('lsp_implementations')<cr>", "List implementations" },
+    r = { "<cmd>lua require('trouble').open('lsp_references')<cr>", "List references" },
+    o = { "<cmd>lua require('overseer').run_template()<cr>", "Overseer Run" },
+    O = { "<cmd>lua require('symbols-outline').open_outline()<cr>", "Outline" },
+    f = { "<cmd>lua require('nvim-tree').toggle()<cr>", "NvimTree" },
   }, { prefix = "g" })
 
   wk.register({
-    r = "Rename (treesitter or lsp)",
+    r = "Rename (lsp or treesitter)",
     v = "Incremental selection",
     e = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Current diagnostics" },
-    d = { "<cmd>lua require'trouble'.open'document_diagnostics'<cr>", "Document diagnostics" },
-    w = { "<cmd>lua require'trouble'.open'workspace_diagnostics'<cr>", "Workspace diagnostics" },
+    d = { "<cmd>lua require('trouble').open('document_diagnostics')<cr>", "Document diagnostics" },
+    w = { "<cmd>lua require('trouble').open('workspace_diagnostics')<cr>", "Workspace diagnostics" },
+    o = { "<cmd>lua require('overseer').toggle()<cr>", "Overseer" },
     t = {
       name = "Telescope",
-      t = { "<cmd>lua require'telescope.command'.load_command()<cr>", "Builtin" },
-      s = { "<cmd>lua require'telescope.command'.load_command'symbols'<cr>", "Symbols" },
-      d = { "<cmd>lua require'telescope.command'.load_command'lsp_document_symbols'<cr>", "Document Symbols" },
-      w = { "<cmd>lua require'telescope.command'.load_command'lsp_workspace_symbols'<cr>", "Workspace Symbols" },
-      f = { "<cmd>lua require'telescope.command'.load_command'find_files'<cr>", "Find Files" },
-      o = { "<cmd>lua require'telescope.command'.load_command'oldfiles'<cr>", "Old Files" },
+      t = { "<cmd>lua require('telescope.command').load_command()<cr>", "Builtin" },
+      s = { "<cmd>lua require('telescope.command').load_command('symbols')<cr>", "Symbols" },
+      d = { "<cmd>lua require('telescope.command').load_command('lsp_document_symbols')<cr>", "Document Symbols" },
+      w = { "<cmd>lua require('telescope.command').load_command('lsp_workspace_symbols')<cr>", "Workspace Symbols" },
+      f = { "<cmd>lua require('telescope.command').load_command('find_files')<cr>", "Find Files" },
+      o = { "<cmd>lua require('telescope.command').load_command('oldfiles')<cr>", "Old Files" },
     },
   }, { prefix = "<leader>" })
 end

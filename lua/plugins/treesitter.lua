@@ -29,7 +29,6 @@ Spec.config = function(name, info)
         init_selection = "<leader>v",
         node_incremental = "<space>",
         node_decremental = "<backspace>",
-        scope_incremental = "<leader>s",
       },
     },
     indent = {
