@@ -1,2 +1,2 @@
 pcall(require, "impatient")
-require "user"
+require("user")

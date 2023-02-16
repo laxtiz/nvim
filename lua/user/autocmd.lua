@@ -21,7 +21,7 @@ autocmd("BufWinEnter", {
   callback = function()
     local pos = vim.api.nvim_win_get_cursor(0)
     if vim.fn.foldclosed(pos[1]) > 0 then
-      vim.cmd [[normal! zO]]
+      vim.cmd([[normal! zO]])
     end
   end,
 })

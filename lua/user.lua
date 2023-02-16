@@ -1,7 +1,7 @@
-require "user.base"
-require "user.options"
-require "user.keymap"
-require "user.command"
-require "user.autocmd"
-require "user.diagnostic"
-require "user.bootstrap"
+require("user.base")
+require("user.options")
+require("user.keymap")
+require("user.command")
+require("user.autocmd")
+require("user.diagnostic")
+require("user.bootstrap")

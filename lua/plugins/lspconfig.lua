@@ -25,7 +25,7 @@ Spec.config = function(name, info)
     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
     vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
 
-    if vim.fn.has "nvim-0.8" == 1 then
+    if vim.fn.has("nvim-0.8") == 1 then
       vim.api.nvim_buf_set_keymap(bufnr, "x", "=", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
       vim.api.nvim_buf_set_keymap(bufnr, "n", "==", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
       vim.api.nvim_buf_set_keymap(bufnr, "x", "z=", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
@@ -64,7 +64,7 @@ Spec.config = function(name, info)
     capabilities = capabilities,
   }
 
-  local mason_lspconfig = require "mason-lspconfig"
+  local mason_lspconfig = require("mason-lspconfig")
   mason_lspconfig.setup {
     ensure_installed = { "lua_ls" },
     automatic_installation = true,
@@ -92,7 +92,7 @@ Spec.config = function(name, info)
   }
 
   -- other server installed with mason.
-  local lspconfig = require "lspconfig"
+  local lspconfig = require("lspconfig")
   for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
     if lspconfig[server_name].manager == nil then
       lspconfig[server_name].setup(default_config)

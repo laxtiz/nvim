@@ -14,7 +14,7 @@ Spec.module = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local telescope = require "telescope"
+  local telescope = require("telescope")
 
   telescope.setup {
     defaults = {

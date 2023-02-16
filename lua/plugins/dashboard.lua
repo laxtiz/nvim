@@ -5,7 +5,7 @@ local Spec = { "glepnir/dashboard-nvim" }
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local db = require "dashboard"
+  local db = require("dashboard")
 
   ---Return the string left justified in a string of length width
   ---@param text string
@@ -42,33 +42,33 @@ Spec.config = function(name, info)
   db.custom_center = {
     {
       icon = "  ",
-      desc = title "New File",
+      desc = title("New File"),
       action = db.new_file,
     },
     {
       icon = "  ",
-      desc = title "Find Files",
+      desc = title("Find Files"),
       action = function()
-        require("telescope.command").load_command "find_files"
+        require("telescope.command").load_command("find_files")
       end,
     },
     {
       icon = "  ",
-      desc = title "Recent Files",
+      desc = title("Recent Files"),
       action = function()
-        require("telescope.command").load_command "oldfiles"
+        require("telescope.command").load_command("oldfiles")
       end,
     },
     {
       icon = "  ",
-      desc = title "Packer Sync",
+      desc = title("Packer Sync"),
       action = function()
         require("plugins").sync()
       end,
     },
     {
       icon = "  ",
-      desc = title "Quit Nvim",
+      desc = title("Quit Nvim"),
       action = "qall",
     },
   }

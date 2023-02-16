@@ -116,7 +116,7 @@ Spec.config = function(name, info)
     },
   }
 
-  vim.cmd [[colorscheme catppuccin]]
+  vim.cmd([[colorscheme catppuccin]])
 end
 
 return Spec

@@ -9,7 +9,7 @@ Spec.requires = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local null = require "null-ls"
+  local null = require("null-ls")
 
   -- null.reset_sources()
   null.setup {
@@ -19,9 +19,9 @@ Spec.config = function(name, info)
     },
     sources = {
       -- null.builtins.formatting.stylua,
-      -- null.builtins.formatting.prettier,
       null.builtins.formatting.shfmt,
       null.builtins.formatting.black,
+      null.builtins.formatting.yamlfmt,
     },
   }
 end

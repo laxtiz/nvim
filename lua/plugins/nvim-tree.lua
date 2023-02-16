@@ -13,7 +13,7 @@ Spec.module_pattern = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local tree = require "nvim-tree"
+  local tree = require("nvim-tree")
   -- HACK: reload
   tree.setup_called = false
   tree.setup {

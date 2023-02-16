@@ -15,9 +15,9 @@ Spec.requires = {
 ---@param info PluginInfo
 ---@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local cmp = require "cmp"
-  local lspkind = require "lspkind"
-  local snippy = require "snippy"
+  local cmp = require("cmp")
+  local lspkind = require("lspkind")
+  local snippy = require("snippy")
 
   cmp.setup {
     preselect = cmp.PreselectMode.None,
@@ -93,7 +93,7 @@ Spec.config = function(name, info)
   })
 
   pcall(function()
-    local autopairs = require "nvim-autopairs.completion.cmp"
+    local autopairs = require("nvim-autopairs.completion.cmp")
     cmp.event:on("confirm_done", autopairs.on_confirm_done { map_char = { tex = "" } })
   end)
 
