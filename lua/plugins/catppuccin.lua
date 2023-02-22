@@ -1,13 +1,8 @@
 ---@type PluginSpec
 local Spec = { "catppuccin/nvim", as = "catppuccin" }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   require("catppuccin").setup {
-    ---@type string | "latte" | "frappe" | "macchiato" | "mocha"
-    flavour = "macchiato",
     background = {
       light = "latte",
       dark = "mocha",
@@ -16,7 +11,7 @@ Spec.config = function(name, info)
     show_end_of_buffer = false,
     term_colors = true,
     dim_inactive = {
-      enabled = true,
+      enabled = false,
       shade = "dark",
       percentage = 0.15,
     },

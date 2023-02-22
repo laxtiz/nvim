@@ -10,10 +10,8 @@ local plugins = setmetatable({}, {
 
 ---@param use PackerUse
 ---@param use_rocks PackerUseRocks
----@diagnostic disable-next-line: unused-local
 local spec = function(use, use_rocks)
   use { "wbthomason/packer.nvim", opt = true }
-  use { "github/copilot.vim", opt = true }
 
   use(plugins["mason"])
   use(plugins["lspconfig"])
@@ -31,22 +29,24 @@ local spec = function(use, use_rocks)
   use(plugins["gitsigns"])
   use(plugins["indent-blankline"])
   use(plugins["todo-comments"])
-  use(plugins["overseer"])
 
   -- UI Components, maybe lazy-loaded
   use(plugins["toggleterm"])
   use(plugins["nvim-tree"])
-  use(plugins["symbols-outline"])
+  use(plugins["aerial"])
+  -- use(plugins["symbols-outline"])
   use(plugins["telescope"])
   use(plugins["dressing"])
   use(plugins["trouble"])
   use(plugins["notify"])
   use(plugins["which-key"])
+  use(plugins["overseer"])
 
   -- colorscheme
   use(plugins["catppuccin"])
 
   -- not need setup.
+  use { "github/copilot.vim", opt = true }
   use { "dstein64/vim-startuptime", cmd = "StartupTime" }
   use("lewis6991/impatient.nvim")
   use("gpanders/editorconfig.nvim")
@@ -55,7 +55,6 @@ local spec = function(use, use_rocks)
   use("honza/vim-snippets")
   use("tpope/vim-surround")
   use("tpope/vim-repeat")
-  use("purofle/vim-mindustry-logic")
 end
 
 ---@type PackerConfig
@@ -70,7 +69,7 @@ local config = {
     default_url_format = "https://ghproxy.com/github.com/%s.git",
   },
   profile = {
-    enable = false,
+    enable = true,
   },
 }
 

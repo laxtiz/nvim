@@ -5,9 +5,6 @@ Spec.requires = {
   "nvim-lua/plenary.nvim",
 }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   local wk = require("which-key")
 
@@ -81,8 +78,8 @@ Spec.config = function(name, info)
     d = { "<cmd>lua require('trouble').open('lsp_definitions')<cr>", "Goto definitions" },
     i = { "<cmd>lua require('trouble').open('lsp_implementations')<cr>", "List implementations" },
     r = { "<cmd>lua require('trouble').open('lsp_references')<cr>", "List references" },
-    o = { "<cmd>lua require('overseer').run_template()<cr>", "Overseer Run" },
-    O = { "<cmd>lua require('symbols-outline').open_outline()<cr>", "Outline" },
+    o = { "<cmd>lua require('overseer').toggle()<cr>", "Overseer" },
+    O = { "<cmd>lua require('aerial').toggle()<cr>", "Outline" },
     f = { "<cmd>lua require('nvim-tree').toggle()<cr>", "NvimTree" },
   }, { prefix = "g" })
 
@@ -92,7 +89,6 @@ Spec.config = function(name, info)
     e = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Current diagnostics" },
     d = { "<cmd>lua require('trouble').open('document_diagnostics')<cr>", "Document diagnostics" },
     w = { "<cmd>lua require('trouble').open('workspace_diagnostics')<cr>", "Workspace diagnostics" },
-    o = { "<cmd>lua require('overseer').toggle()<cr>", "Overseer" },
     t = {
       name = "Telescope",
       t = { "<cmd>lua require('telescope.command').load_command()<cr>", "Builtin" },

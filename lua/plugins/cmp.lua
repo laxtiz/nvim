@@ -8,12 +8,10 @@ Spec.requires = {
   "hrsh7th/cmp-nvim-lua",
   "hrsh7th/cmp-nvim-lsp",
   "onsails/lspkind.nvim",
-  { "dcampos/cmp-snippy", requires = "dcampos/nvim-snippy" },
+  "dcampos/cmp-snippy",
+  "dcampos/nvim-snippy",
 }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   local cmp = require("cmp")
   local lspkind = require("lspkind")

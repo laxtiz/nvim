@@ -2,7 +2,6 @@
 local levels = vim.log.levels
 local group = vim.api.nvim_create_augroup("plugins", { clear = true })
 
----@diagnostic disable-next-line: unused-local
 local sync = function(job_id, exit_code, event)
   if exit_code ~= 0 then
     vim.notify("failed on install packer.nvim", levels.ERROR)
@@ -15,7 +14,8 @@ end
 local bootstrap = function()
   local packpath = vim.fn.stdpath("data") .. "/site"
   local install_path = packpath .. "/pack/packer/opt/packer.nvim"
-  if vim.fn.empty(vim.fn.glob(install_path)) == 0 then
+  if vim.loop.fs_stat(install_path) then
+    require("plugins")
     return
   end
 
@@ -65,7 +65,3 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     require("plugins").compile()
   end,
 })
-
-vim.api.nvim_create_user_command("PackerSync", function()
-  require("plugins").sync()
-end, { desc = "PackerSync wrapped" })

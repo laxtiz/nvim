@@ -1,9 +1,6 @@
 ---@type PluginSpec
 local Spec = { "glepnir/dashboard-nvim" }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   local db = require("dashboard")
 

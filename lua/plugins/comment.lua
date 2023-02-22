@@ -1,9 +1,6 @@
 ---@type PluginSpec
 local Spec = { "numToStr/Comment.nvim" }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   require("Comment").setup {
     padding = true,

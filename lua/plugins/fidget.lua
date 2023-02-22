@@ -1,9 +1,6 @@
 ---@type PluginSpec
 local Spec = { "j-hui/fidget.nvim" }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   require("fidget").setup {
     text = {

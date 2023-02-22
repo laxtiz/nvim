@@ -5,11 +5,8 @@ Spec.requires = {
   "nvim-tree/nvim-web-devicons",
 }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
-  local config = {
+  require("lualine").setup {
     options = {
       icons_enabled = true,
       theme = "auto",
@@ -51,13 +48,13 @@ Spec.config = function(name, info)
     extensions = {
       "nvim-tree",
       "symbols-outline",
+      "aerial",
       "toggleterm",
       "trouble",
+      "overseer",
       "quickfix",
     },
   }
-
-  require("lualine").setup(config)
 end
 
 return Spec

@@ -9,9 +9,6 @@ local Spec = { "folke/todo-comments.nvim" }
 -- WARN: ???
 -- FEAT: New feature
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   require("todo-comments").setup {
     signs = true,

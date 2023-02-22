@@ -1,0 +1,16 @@
+{
+  "neoconf": {
+    "live_reload": true
+  },
+  "neodev": {
+    "lspconfig": true,
+    "setup_jsonls": true
+  },
+  "lspconfig": {
+    "lua_ls": {
+      "Lua.diagnostics.disable": [
+        "unused-local"
+      ]
+    }
+  }
+}

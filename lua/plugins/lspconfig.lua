@@ -3,6 +3,7 @@ local Spec = { "neovim/nvim-lspconfig" }
 
 Spec.requires = {
   "williamboman/mason-lspconfig.nvim",
+  "folke/neoconf.nvim",
   "ray-x/lsp_signature.nvim",
   "SmiteshP/nvim-navic",
   "folke/neodev.nvim",
@@ -14,9 +15,6 @@ Spec.after = {
   "mason.nvim",
 }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   local opts = { silent = true }
 
@@ -45,9 +43,9 @@ Spec.config = function(name, info)
       vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
     end
 
-    if client.server_capabilities.documentSymbolProvider then
-      require("nvim-navic").attach(client, bufnr)
-    end
+    -- if client.server_capabilities.documentSymbolProvider then
+    --   require("nvim-navic").attach(client, bufnr)
+    -- end
 
     if client.server_capabilities.signatureHelpProvider then
       require("lsp_signature").on_attach(client, bufnr)
@@ -68,6 +66,25 @@ Spec.config = function(name, info)
   mason_lspconfig.setup {
     ensure_installed = { "lua_ls" },
     automatic_installation = true,
+  }
+
+  for _, config in pairs(require("lspconfig.configs")) do
+    config.manager = nil
+  end
+
+  require("neoconf").setup {
+    plugins = {
+      lspconfig = {
+        enabled = true,
+      },
+      jsonls = {
+        enabled = true,
+      },
+      lua_ls = {
+        enabled = false,
+        enabled_for_neovim_config = true,
+      },
+    },
   }
 
   -- for lua

@@ -1,9 +1,6 @@
 ---@type PluginSpec
 local Spec = { "lukas-reineke/indent-blankline.nvim" }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   require("indent_blankline").setup {
     show_current_context = true,

@@ -5,9 +5,6 @@ Spec.module = {
   "symbols-outline",
 }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   local outline = require("symbols-outline")
 

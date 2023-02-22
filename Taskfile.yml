@@ -1,0 +1,11 @@
+version: '3'
+
+tasks:
+  format:
+    desc: format with stylua
+    cmds:
+      - stylua lua/
+  push:
+    desc: push to github.com
+    cmds:
+      - git push --set-upstream origin main

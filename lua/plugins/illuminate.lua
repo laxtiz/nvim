@@ -5,9 +5,6 @@ Spec.requires = {
   "nvim-treesitter/nvim-treesitter",
 }
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   require("illuminate").configure {
     providers = {

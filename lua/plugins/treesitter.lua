@@ -2,11 +2,11 @@
 local Spec = { "nvim-treesitter/nvim-treesitter" }
 
 Spec.requires = {
-  { "nvim-treesitter/nvim-treesitter-context", after = "nvim-treesitter" },
-  { "nvim-treesitter/nvim-treesitter-refactor", after = "nvim-treesitter" },
-  { "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" },
-  { "RRethy/nvim-treesitter-endwise", after = "nvim-treesitter" },
-  { "p00f/nvim-ts-rainbow", after = "nvim-treesitter" },
+  "nvim-treesitter/nvim-treesitter-context",
+  "nvim-treesitter/nvim-treesitter-refactor",
+  "nvim-treesitter/nvim-treesitter-textobjects",
+  "RRethy/nvim-treesitter-endwise",
+  "p00f/nvim-ts-rainbow",
 }
 
 Spec.run = function()
@@ -14,9 +14,6 @@ Spec.run = function()
   update("all")
 end
 
----@param name string
----@param info PluginInfo
----@diagnostic disable-next-line: unused-local
 Spec.config = function(name, info)
   require("nvim-treesitter.configs").setup {
     -- ensure_installed = { "lua", "vim" },
