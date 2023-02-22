@@ -8,9 +8,7 @@
   },
   "lspconfig": {
     "lua_ls": {
-      "Lua.diagnostics.disable": [
-        "unused-local"
-      ]
+      "Lua.diagnostics.disable": ["unused-local"]
     }
   }
 }

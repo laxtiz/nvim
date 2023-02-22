@@ -1,11 +1,19 @@
-version: '3'
+version: "3"
 
 tasks:
   format:
     desc: format with stylua
     cmds:
-      - stylua lua/
+      - stylua .
+      - prettier -w .
+  check:
+    desc: check style
+    cmds:
+      - stylua --check .
+      - prettier --check .
   push:
     desc: push to github.com
+    deps:
+      - check
     cmds:
       - git push --set-upstream origin main

@@ -1,6 +1,8 @@
 ---@type PluginSpec
 local Spec = { "akinsho/toggleterm.nvim" }
 
+Spec.keys = "<F12>"
+
 Spec.config = function(name, info)
   local shell = vim.o.shell
   if vim.fn.executable("pwsh") == 1 then

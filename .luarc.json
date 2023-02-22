@@ -1,5 +1,3 @@
 {
-    "diagnostics.disable": [
-        "unused-local"
-    ]
+  "diagnostics.disable": ["unused-local"]
 }
