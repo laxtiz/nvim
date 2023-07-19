@@ -9,6 +9,10 @@ Spec.requires = {
   "folke/neodev.nvim",
 }
 
+Spec.after = {
+  "mason.nvim"
+}
+
 Spec.config = function(name, info)
   local default_config = {
     capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
