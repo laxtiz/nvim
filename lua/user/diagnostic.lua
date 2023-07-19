@@ -1,6 +1,3 @@
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-
 vim.diagnostic.config {
   signs = true,
   underline = true,
@@ -12,7 +9,7 @@ vim.diagnostic.config {
     header = { "  Diagnostic", "Float" },
     source = "if_many",
   },
-  update_in_insert = true,
+  update_in_insert = false,
 }
 
 local signs = { Error = " ", Warn = " ", Info = " ", Hint = " " }

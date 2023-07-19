@@ -1,7 +1,9 @@
-require("user.base")
 require("user.options")
 require("user.keymap")
-require("user.command")
 require("user.autocmd")
+require("user.lsp")
 require("user.diagnostic")
-require("user.bootstrap")
+
+if vim.g.vscode ~= 1 then
+  require("user.bootstrap")
+end

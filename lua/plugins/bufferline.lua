@@ -22,7 +22,9 @@ Spec.config = function(name, info)
         {
           filetype = "NvimTree",
           text = "NvimTree",
+          text_align = "center",
           highlight = "NvimTreeSymlink",
+          separator = true,
         },
       },
     },

@@ -17,32 +17,10 @@ Spec.config = function(name, info)
       globalstatus = true,
     },
     sections = {
-      lualine_a = {
-        { "mode", icon = "" },
-      },
-      lualine_b = {
-        { "branch", icon = "" },
-        {
-          "diff",
-          colored = true,
-          symbols = {
-            added = " ",
-            modified = " ",
-            removed = " ",
-          },
-        },
-        {
-          "diagnostics",
-          colored = true,
-          symbols = {
-            icons = { error = " ", warn = " ", info = " ", hint = " " },
-            no_icons = { error = "E:", warn = "W:", info = "I:", hint = "H:" },
-          },
-        },
-      },
+      lualine_a = { "mode" },
+      lualine_b = { "branch", "diff", "diagnostics" },
       lualine_c = {
         { "filename", path = 1, file_status = false },
-        { "overseer", colored = true },
       },
     },
     extensions = {
@@ -51,7 +29,6 @@ Spec.config = function(name, info)
       "aerial",
       "toggleterm",
       "trouble",
-      "overseer",
       "quickfix",
     },
   }

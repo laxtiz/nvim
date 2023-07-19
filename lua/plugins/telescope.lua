@@ -4,6 +4,7 @@ local Spec = { "nvim-telescope/telescope.nvim" }
 Spec.requires = {
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope-symbols.nvim",
+  "folke/trouble.nvim",
 }
 
 Spec.module = {
@@ -12,6 +13,7 @@ Spec.module = {
 
 Spec.config = function(name, info)
   local telescope = require("telescope")
+  local trouble = require("trouble.providers.telescope")
 
   telescope.setup {
     defaults = {
@@ -23,14 +25,13 @@ Spec.config = function(name, info)
         },
       },
       winblend = 25,
-      mappings = {},
-    },
-    extensions = {
-      fzf = {
-        fuzzy = true,
-        override_generic_sorter = true,
-        override_file_sorter = true,
-        case_mode = "smart_case",
+      mappings = {
+        i = {
+          ["<C-t>"] = trouble.open_with_trouble,
+        },
+        n = {
+          ["<C-t>"] = trouble.open_with_trouble,
+        },
       },
     },
   }

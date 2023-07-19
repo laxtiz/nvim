@@ -33,14 +33,12 @@ local spec = function(use, use_rocks)
   -- UI Components, maybe lazy-loaded
   use(plugins["toggleterm"])
   use(plugins["nvim-tree"])
-  use(plugins["aerial"])
-  -- use(plugins["symbols-outline"])
+  use(plugins["symbols-outline"])
   use(plugins["telescope"])
   use(plugins["dressing"])
   use(plugins["trouble"])
   use(plugins["notify"])
   use(plugins["which-key"])
-  use(plugins["overseer"])
 
   -- colorscheme
   use(plugins["catppuccin"])

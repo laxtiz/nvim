@@ -1,8 +1,7 @@
-local autocmd = vim.api.nvim_create_autocmd
 local group = vim.api.nvim_create_augroup("user", { clear = true })
 
 -- restore cursor
-autocmd("BufReadPost", {
+vim.api.nvim_create_autocmd("BufReadPost", {
   group = group,
   desc = "restore cursor to last edit postion.",
   callback = function(args)
@@ -15,7 +14,7 @@ autocmd("BufReadPost", {
 })
 
 -- open nested fold
-autocmd("BufWinEnter", {
+vim.api.nvim_create_autocmd("BufWinEnter", {
   group = group,
   desc = "open closed fold",
   callback = function()
@@ -27,20 +26,10 @@ autocmd("BufWinEnter", {
 })
 
 -- highlight on yank
-autocmd("TextYankPost", {
+vim.api.nvim_create_autocmd("TextYankPost", {
   group = group,
   desc = "highlight on yank",
   callback = function()
     vim.highlight.on_yank()
   end,
-})
-
-autocmd({ "WinEnter", "InsertLeave" }, {
-  group = group,
-  command = "let &l:rnu = &l:nu && &g:rnu",
-})
-
-autocmd({ "WinLeave", "InsertEnter" }, {
-  group = group,
-  command = "let &l:rnu = v:false",
 })

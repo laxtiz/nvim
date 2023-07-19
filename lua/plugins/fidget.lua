@@ -1,5 +1,5 @@
 ---@type PluginSpec
-local Spec = { "j-hui/fidget.nvim" }
+local Spec = { "j-hui/fidget.nvim", tag = "legacy" }
 
 Spec.config = function(name, info)
   require("fidget").setup {

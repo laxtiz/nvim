@@ -74,7 +74,7 @@ Spec.config = function(name, info)
   }
 
   -- use <?> for which-key plugin
-  cmp.setup.cmdline("/", {
+  cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = "buffer" },

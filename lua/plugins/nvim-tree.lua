@@ -5,8 +5,8 @@ Spec.requires = {
   "nvim-tree/nvim-web-devicons",
 }
 
-Spec.module_pattern = {
-  "^nvim%-tree$",
+Spec.module = {
+  "nvim-tree.api",
 }
 
 Spec.config = function(name, info)

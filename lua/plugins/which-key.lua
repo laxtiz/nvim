@@ -26,10 +26,6 @@ Spec.config = function(name, info)
       },
     },
     -- operators = { gc = "Comment linewise", gb = "Comment blockwise" },
-    key_labels = {
-      ["<space>"] = "SPC",
-      ["<tab>"] = "TAB",
-    },
     window = {
       border = "none",
       position = "bottom",
@@ -40,10 +36,6 @@ Spec.config = function(name, info)
     },
     show_help = true,
     triggers = "auto",
-  }
-
-  wk.register {
-    ["?"] = { "<cmd>lua require('which-key').show_command()<cr>", "Which Key?" },
   }
 
   wk.register({
@@ -79,13 +71,11 @@ Spec.config = function(name, info)
     i = { "<cmd>lua require('trouble').open('lsp_implementations')<cr>", "List implementations" },
     r = { "<cmd>lua require('trouble').open('lsp_references')<cr>", "List references" },
     o = { "<cmd>lua require('overseer').toggle()<cr>", "Overseer" },
-    O = { "<cmd>lua require('aerial').toggle()<cr>", "Outline" },
-    f = { "<cmd>lua require('nvim-tree').toggle()<cr>", "NvimTree" },
+    f = { "<cmd>lua require('nvim-tree.api').tree.toggle()<cr>", "NvimTree" },
   }, { prefix = "g" })
 
   wk.register({
     r = "Rename (lsp or treesitter)",
-    v = "Incremental selection",
     e = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Current diagnostics" },
     d = { "<cmd>lua require('trouble').open('document_diagnostics')<cr>", "Document diagnostics" },
     w = { "<cmd>lua require('trouble').open('workspace_diagnostics')<cr>", "Workspace diagnostics" },
@@ -97,6 +87,7 @@ Spec.config = function(name, info)
       w = { "<cmd>lua require('telescope.command').load_command('lsp_workspace_symbols')<cr>", "Workspace Symbols" },
       f = { "<cmd>lua require('telescope.command').load_command('find_files')<cr>", "Find Files" },
       o = { "<cmd>lua require('telescope.command').load_command('oldfiles')<cr>", "Old Files" },
+      n = { "<cmd>lua require('telescope.command').load_command('notify')<cr>", "Notifications" },
     },
   }, { prefix = "<leader>" })
 end

@@ -3,18 +3,7 @@ local Spec = { "catppuccin/nvim", as = "catppuccin" }
 
 Spec.config = function(name, info)
   require("catppuccin").setup {
-    background = {
-      light = "latte",
-      dark = "mocha",
-    },
-    transparent_background = false,
-    show_end_of_buffer = false,
     term_colors = true,
-    dim_inactive = {
-      enabled = false,
-      shade = "dark",
-      percentage = 0.15,
-    },
     styles = {
       comments = { "italic" },
       conditionals = { "italic" },
@@ -111,7 +100,7 @@ Spec.config = function(name, info)
     },
   }
 
-  vim.cmd([[colorscheme catppuccin]])
+  vim.cmd.colorscheme("catppuccin")
 end
 
 return Spec

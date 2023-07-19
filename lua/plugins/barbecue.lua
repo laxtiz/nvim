@@ -7,7 +7,12 @@ Spec.requires = {
 }
 
 Spec.config = function(name, info)
-  require("barbecue").setup {}
+  require("barbecue").setup {
+    theme = "catppuccin",
+    attach_navic = true,
+    show_navic = true,
+    create_autocmd = true,
+  }
 end
 
 return Spec
